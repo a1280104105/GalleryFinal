@@ -346,6 +346,15 @@ public class PhotoEditActivity extends CropImageActivity implements AdapterView.
 
     @Override
     protected void takeResult(PhotoInfo info) {
+        if (mSelectPhotoList == null) {
+            mSelectPhotoList = new ArrayList<>();
+         }
+        if(null==mPhotoList){
+            mPhotoList = new ArrayList<>();
+        }
+        if(null==mPhotoTempMap){
+           mPhotoTempMap  = new LinkedHashMap<>();
+        }
         if (!GalleryFinal.getFunctionConfig().isMutiSelect()) {
             mPhotoList.clear();
             mSelectPhotoList.clear();
